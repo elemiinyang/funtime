@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Do You Love Me?</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #ffe6e6;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #d6336c;
+    }
+
+    .buttons {
+      margin-top: 50px;
+    }
+
+    button {
+      font-size: 1.5em;
+      padding: 15px 30px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #yes {
+      background-color: #28a745;
+      color: white;
+    }
+
+    #no {
+      background-color: #dc3545;
+      color: white;
+      position: absolute;
+    }
+
+    #message {
+      display: none;
+      font-size: 2em;
+      color: #d6336c;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1>DO YOU LOVE ME?</h1>
+  <div class="buttons">
+    <button id="yes">Yes ❤️</button>
+    <button id="no">No 😢</button>
+  </div>
+
+  <div id="message">
+    <p>I KNEW YOU LOVE ME 💖 HAPPY VALENTINE!</p>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+    const yesBtn = document.getElementById("yes");
+    const message = document.getElementById("message");
+
+    // Move the "No" button to a random position when mouse gets close
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.floor(Math.random() * (window.innerWidth - 100));
+      const y = Math.floor(Math.random() * (window.innerHeight - 50));
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+
+    // Show message on Yes
+    yesBtn.addEventListener("click", () => {
+      document.body.innerHTML = `
+        <h1 style="color:#d6336c; margin-top: 100px;">I KNEW YOU LOVE ME 💖<br/>HAPPY VALENTINE!</h1>
+      `;
+    });
+  </script>
+</body>
+</html>
